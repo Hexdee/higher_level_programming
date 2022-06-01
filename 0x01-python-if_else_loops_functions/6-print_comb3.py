@@ -3,6 +3,6 @@ for i in range(0, 100):
     a, b = i // 10, i % 10
     if i // 10 < i % 10:
         if i < 89:
-            print("{:d}".format(i), end=", ")
+            print("{:02d}".format(i), end=", ")
         else:
             print("{:d}".format(i))
