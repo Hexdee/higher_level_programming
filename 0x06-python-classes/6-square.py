@@ -13,7 +13,7 @@ class Square:
         """
 
         self.size = size
-        sepf.position = position
+        self.position = position
 
     @property
     def size(self):
