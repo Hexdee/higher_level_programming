@@ -1,6 +1,17 @@
 #!/usr/bin/python3
+"""Module containing the square class"""
+
+
 class Square:
+    """Square class with private attribute"""
+
     def __init__(self, size=0):
+        """ Initialize sqaure
+
+        Args:
+            size (int): size of the square
+        """
+
         if type(size) != int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -9,5 +20,10 @@ class Square:
         self.__size = size
 
     def area(self):
-        ar = self.__size * self.__size
-        return ar
+        """ calculate the area
+
+        Returns:
+            area
+        """
+
+        return self.__size * self.__size
