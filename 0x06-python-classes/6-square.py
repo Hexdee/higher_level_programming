@@ -5,13 +5,15 @@
 class Square:
     """A square class"""
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0):
         """initializes square
         Args:
             size (int): size of the square
+            position (int, int): position of the argument
         """
 
         self.size = size
+        sepf.position = position
 
     @property
     def size(self):
