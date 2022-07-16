@@ -1,13 +1,13 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
 Module containing the rectangle class
 """
 
 
-from . import base
+from models.base import Base
 
 
-class Rectangle(base.Base):
+class Rectangle(Base):
     """
     Rectangle class for creating and using rectangles
     """
