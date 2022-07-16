@@ -3,7 +3,9 @@
 Module contqining the Square class
 """
 
+
 from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """
@@ -55,12 +57,12 @@ class Square(Rectangle):
             x = kwargs.get("x", self.x)
             y = kwargs.get("y", self.y)
             super().update(id=id, width=size, height=size, x=x, y=y)
-        super().update(\
-                args[0] if len(args) > 0 else self.id,\
-                args[1] if len(args) > 1 else self.size,\
-                args[1] if len(args) > 1 else self.size,\
-                args[2] if len(args) > 2 else self.x,\
-                args[3] if len(args) > 3 else self.y,\
+        super().update(
+                args[0] if len(args) > 0 else self.id,
+                args[1] if len(args) > 1 else self.size,
+                args[1] if len(args) > 1 else self.size,
+                args[2] if len(args) > 2 else self.x,
+                args[3] if len(args) > 3 else self.y,
                 )
 
     def to_dictionary(self):

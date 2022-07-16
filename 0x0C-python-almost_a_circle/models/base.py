@@ -68,7 +68,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
-        Read from file <Class name>.json and Returns a list of instances 
+        Read from file <Class name>.json and Returns a list of instances
         """
         instanceList = []
         with open(cls.__name__ + ".json", "r") as myFile:
