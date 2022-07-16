@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+"""
+Module contqining the Square class
+"""
+
+
+class Square(Rectangle):
+    """
+    Square class for creating and working with squares
+    """
+
+    def __init__(self, size, x=0, y=0, id=None):
+        """cr
+        super().__init__(size, size, x, y, id)
+
