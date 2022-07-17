@@ -31,7 +31,7 @@ class Base:
         """
         Returns json string representation of list_dictionaries
         """
-        if list_dictionaries == None:
+        if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -44,12 +44,13 @@ class Base:
             list_objs (list): list of objects
         """
         fileName = cls.__name__ + ".json"
-        if list_objs != None:
+        if list_objs is not None:
             list_dict_objs = [obj.to_dictionary() for obj in list_objs]
         else:
             list_dict_objs = []
+        list_str_obj = cls.to_json_string(list_dict_objs)
         with open(fileName, "w") as myFile:
-            json.dump(list_dict_objs, myFile)
+            myFile.write(list_str_obj)
 
     @staticmethod
     def from_json_string(json_string):
@@ -58,7 +59,7 @@ class Base:
         Args:
             json_string (str): JSON string representation of object
         """
-        if json_string == None  or json_string == "":
+        if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
 
@@ -80,7 +81,10 @@ class Base:
         """
         instanceList = []
         with open(cls.__name__ + ".json", "r") as myFile:
-            dictList = cls.from_json_string(myFile.read())
+            content = myFile.read()
+        if content == "":
+            return []
+        dictList = cls.from_json_string(content)
         for i in dictList:
             instanceList.append(cls.create(**i))
         return instanceList
