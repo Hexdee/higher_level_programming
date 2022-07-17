@@ -41,7 +41,7 @@ class Rectangle(Base):
         Args:
             width (int): new width
         """
-        if not isinstance(width, int):
+        if type(width) != int:
             raise TypeError("width must be an integer")
         if width <= 0:
             raise ValueError("width must be > 0")
@@ -61,7 +61,7 @@ class Rectangle(Base):
         Args:
             height (int): new height
         """
-        if not isinstance(height, int):
+        if type(height) != int:
             raise TypeError("height must be an integer")
         if height <= 0:
             raise ValueError("height must be > 0")
@@ -81,7 +81,7 @@ class Rectangle(Base):
         Args:
             x (int): new x
         """
-        if not isinstance(x, int):
+        if type(x) != int:
             raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
@@ -101,7 +101,7 @@ class Rectangle(Base):
         Args:
             y (int): new y
         """
-        if not isinstance(y, int):
+        if type(y) != int:
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
@@ -119,14 +119,14 @@ class Rectangle(Base):
         """
         print("\n" * self.y, end="")
         for i in range(self.height):
-            print(" " * self.x, "#" * self.width)
+            print(" " * self.x, "#" * self.width, sep="")
 
     def __str__(self):
         """
-        Returns humqn readable representation of rectangle
+        Returns human readable representation of rectangle
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}\
-                ".format(self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """

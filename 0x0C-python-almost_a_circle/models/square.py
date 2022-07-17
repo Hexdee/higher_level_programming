@@ -27,8 +27,8 @@ class Square(Rectangle):
         """
         Returns a human readable format of Square
         """
-        return "[Square] ({}) {}/{} - {}\
-                ".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}"\
+            .format(self.id, self.x, self.y, self.width)
 
     @property
     def size(self):

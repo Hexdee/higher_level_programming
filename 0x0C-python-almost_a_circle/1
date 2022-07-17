@@ -156,7 +156,8 @@ given"
 
     def invalid_types(self):
         '''Returns tuple of types for validation.'''
-        t = (3.14, -1.1, "hello", (2,), [4], {5}, True, float('inf'), float('-inf'), {1: 5})
+        # t = (3.14, -1.1, float('inf'), float('-inf'), True, "str", (2,), [4], {5}, {6: 7}, None)
+        t = (3.14, -1.1, "hello", (2,), True, [4], {5}, float('inf'), float('-inf'), {1: 5})
         return t
 
     def test_G_validate_type(self):
