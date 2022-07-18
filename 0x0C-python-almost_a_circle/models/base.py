@@ -70,7 +70,10 @@ class Base:
         Args:
             dictionary (dict) : dict of attributes
         """
-        newInstance = cls(4, 5)
+        if cls.__name__ == "Square":
+            newInstance = cls(4)
+        elif cls.__name__ == "Rectangle":
+            newInstance = cls(4, 4)
         newInstance.update(**dictionary)
         return newInstance
 
@@ -80,6 +83,8 @@ class Base:
         Read from file <Class name>.json and Returns a list of instances
         """
         instanceList = []
+        if not os.path.isfile(cls.__name__ + ".json"):
+            return []
         with open(cls.__name__ + ".json", "r") as myFile:
             content = myFile.read()
         if content == "":
