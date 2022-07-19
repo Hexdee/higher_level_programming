@@ -4,6 +4,7 @@ Base class module
 """
 
 
+import os
 import json
 
 
