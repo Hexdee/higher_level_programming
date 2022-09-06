@@ -3,15 +3,17 @@
 function second (myArray) {
   if (myArray.length === 2 || myArray.length === 3) { return (0); }
 
-  let max = myArray[2];
-  let secondMax = myArray[3];
+  let max = Number(myArray[2]);
+  let secondMax = Number(myArray[2]);
 
   for (let i = 2; i < myArray.length; i++) {
-    if (myArray[i] > max) {
+    if (Number(myArray[i]) > max) {
       secondMax = max;
-      max = myArray[i];
-    } else if (myArray[i] > secondMax && myArray[i] < max) {
-      secondMax = myArray[i];
+      max = Number(myArray[i]);
+      console.log("new max:", max);
+      console.log("new second:", secondMax);
+    } else if (Number(myArray[i]) > secondMax) {
+      secondMax = Number(myArray[i]);
     }
   }
   return (secondMax);
