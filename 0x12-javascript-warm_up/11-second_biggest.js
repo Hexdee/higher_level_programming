@@ -10,8 +10,8 @@ function second (myArray) {
     if (Number(myArray[i]) > max) {
       secondMax = max;
       max = Number(myArray[i]);
-      console.log("new max:", max);
-      console.log("new second:", secondMax);
+      console.log('new max:', max);
+      console.log('new second:', secondMax);
     } else if (Number(myArray[i]) > secondMax) {
       secondMax = Number(myArray[i]);
     }
